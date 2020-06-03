@@ -1,8 +1,25 @@
 
 function Mega_First_5_Random_Num ()
 {
-    $n = get-random -Minimum 1 -Maximum 70
-    return $n
+    #$n = get-random -Minimum 1 -Maximum 70
+    #return $n
+
+    $picks = @()
+
+    for ($p = 1;$p -le 5; $p++)
+    {
+        $n = get-random -Minimum 1 -Maximum 70 
+        while ($picks.contains($n))
+        {
+            $n = get-random -Minimum 1 -Maximum 70
+        }
+        $picks += $n
+
+        
+
+
+    }
+    return $picks
 }
 
 
@@ -62,8 +79,10 @@ if ($game -match "1")
 
         for ($i = 1;$i -le $NUM_of_Tickets; $i++)
             {
-               write-host $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_Ball_Random_Num)
+               #write-host $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_Ball_Random_Num)
+               write-host $(Mega_First_5_Random_Num) $(Mega_Ball_Random_Num)
             }
+
     }
 
 if ($game -match "2")
