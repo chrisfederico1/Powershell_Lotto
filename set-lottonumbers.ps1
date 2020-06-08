@@ -16,18 +16,29 @@ function Mega_First_5_Random_Num ()
         $picks += $n
 
         
-
-
     }
     return $picks
 }
 
 
 function PowerBall_First_5_Random_Num ()
+
+    {
+        #$n = get-random -Minimum 1 -Maximum 69
+        #return $n
+
+        $picks = @()
+
+    for ($p = 1;$p -le 5; $p++)
     {
         $n = get-random -Minimum 1 -Maximum 69
-        return $n
+        while ($picks.contains($n))
+        {
+            $n = get-random -Minimum 1 -Maximum 69
+        }
+        $picks += $n
     }
+}
 
 function Mega_Ball_Random_Num ()
     {
@@ -44,10 +55,25 @@ function PowerBall_Random_Number ()
 
 function Illinois_Lotto_Random_Numbers ()
     {
+        #$n = get-random -Minimum 1 -Maximum 52
+    #return $n
+
+    $picks = @()
+
+    for ($p = 1;$p -le 5; $p++)
+    {
         $n = get-random -Minimum 1 -Maximum 52
-    return $n
+        while ($picks.contains($n))
+        {
+            $n = get-random -Minimum 1 -Maximum 52
+
+        }
+        $picks += $n
+
+
 
     }
+}
 
 
 
