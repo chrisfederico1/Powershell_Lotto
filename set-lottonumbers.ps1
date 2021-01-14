@@ -38,6 +38,7 @@ function PowerBall_First_5_Random_Num ()
         }
         $picks += $n
     }
+    return $picks
 }
 
 function Mega_Ball_Random_Num ()
@@ -106,7 +107,7 @@ if ($game -match "1")
         for ($i = 1;$i -le $NUM_of_Tickets; $i++)
             {
                #write-host $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_First_5_Random_Num) $(Mega_Ball_Random_Num)
-               write-host $(Mega_First_5_Random_Num) $(Mega_Ball_Random_Num)
+               write-host $(Mega_First_5_Random_Num) -NoNewline; write-host " $(Mega_Ball_Random_Num)" -ForegroundColor Red
             }
 
     }
@@ -122,8 +123,8 @@ if ($game -match "2")
         for ($i = 1;$i -le $NUM_of_Tickets; $i++)
             {
                 
-                write-host $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_Random_Number)
-                
+                #write-host $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_First_5_Random_Num) $(PowerBall_Random_Number)
+                write-host $(PowerBall_First_5_Random_Num) -NoNewline ; write-host " $(PowerBall_Random_Number)" -ForegroundColor Red
             }
     }
  
